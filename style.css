@@ -6,6 +6,13 @@
     text-decoration: none;
     list-style: none;
 }
+
+html,body
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 body
 {
     background:#D8E5C3;
@@ -29,25 +36,63 @@ body
     margin-top: 20px;
 }
 
-.toqueInicio a
-    {   
-        width: 200px;
-        border: 1px solid;
-        border-radius: 22px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin:12px auto;
-        padding: 10px;
-        font-size: 30px;
-        color: #000000;
-    }
-
-.toqueInicio a:hover
+.container
 {
-    transition: color 400ms;
-    background: #00B53E;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 55px;
+    border-radius: 7px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.btn::before
+{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(#00B53E, #006830);
+    animation: efeito 1.3s ease infinite;
+    transition: 1s ease;
+}
+
+
+
+@keyframes efeito{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.container:hover .btn::before{
+    background: #595959;
+}
+
+a{
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 147px;
+    height: 52px;
+    background: #121212;
+    text-align: center;
+    line-height: 52px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+    margin: 0 auto;
 }
 
 
@@ -69,26 +114,5 @@ body
         height: 300px;
         padding: 8px;
         }
-    .toqueInicio a
-    {   
-        width: 50%;
-        border: 1px solid;
-        border-radius: 22px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin:0 auto;
-        padding: 8px;
-        font-size: 30px;
-        color: #000000;
-        transition: 400ms;
-    }
     
-    .toqueInicio a:hover
-    {
-        transition: color 400ms;
-        color: #00B53E;
-        background: #000000;
-    }
 }
